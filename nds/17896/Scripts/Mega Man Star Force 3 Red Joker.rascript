@@ -390,8 +390,10 @@ boss_list = [
     // Unobtainable without Wi-Fi connectivity
     //{ "id": 134, "variant": 4, "name": "Dread Joker RR",  "leaderboard_id":  },
     { "id": 135, "variant": 0, "name": "Crimson Dragon",    "leaderboard_id": 160331 },
+    // Phase 2 variant which goes unnamed
     //{ "id": 135, "variant": 1, "name": "Crimson Dragon",  },"leaderboard_id": 160333 },
     { "id": 135, "variant": 2, "name": "Crimson Dragon SP", "leaderboard_id": 160332 },
+    // Phase 2 variant which goes unnamed
     //{ "id": 135, "variant": 3, "name": "Crimson Dragon",  },"leaderboard_id": 160333 },
     { "id": 135, "variant": 4, "name": "Crimson Dragon Σ",  "leaderboard_id": 160333 },
     { "id": 136, "variant": 0, "name": "Taurus Fire",       "leaderboard_id": 160334 },
@@ -440,6 +442,7 @@ boss_list = [
     { "id": 144, "variant": 4, "name": "Sirius Σ",          "leaderboard_id": 160377 },
 ]
 
+// Create a single key/value pair for each virus and boss for easy RP lookups
 virus_dict = {}
 for virus in virus_list {
     key = virus["id"] + (virus["variant"] * 256)
@@ -618,6 +621,7 @@ location_dict = {
     0xb0: "Debug"
 }
 
+// Join all abilities by their name without worrying about their in-game cost
 abilities_list = [
     [0xf9540,0xf95c2,0xf95ee,0xf961a],         // HP +50
     [0xf9542,0xf95c4,0xf95f0,0xf961c],         // HP +100
@@ -661,6 +665,7 @@ abilities_list = [
     [0xf94cc],                                 // Humor Buster 2
 ]
 
+// All non-dimming chips of each required type for the noise achievements
 fire_chip_ids = [0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x7b,0xd3,0xd4,0xd5,0xd6,0xd7,0xd8,0xe8,0xf1
     ,0x120,0x121,0x122,0x139,0x13a]
 aqua_chip_ids = [0x39,0x3a,0x3b,0x3c,0x3d,0x3e,0x3f,0x40,0x41,0x42,0x43,0x44,0xea,0xee,0xf4,0xfb,0x123,0x124
@@ -722,6 +727,7 @@ function player_movement_allowed() => control_state = 0
 function player_movement_not_allowed() => control_state != 0
 function bottom_menu_open() => bottom_menu_state == 1
 function on_wave_road_or_cc() => out_of_battle_state != 1
+// Originally I checked for HP health going from not empty to empty, but I found that we actually get a null pointer when an enemy dies so I check for that instead
 //function enemy1_just_deleted() => prev(enemy1_health) > 0 && enemy1_health == 0
 //function enemy2_just_deleted() => prev(enemy2_health) > 0 && enemy2_health == 0
 //function enemy3_just_deleted() => prev(enemy3_health) > 0 && enemy3_health == 0
@@ -751,8 +757,12 @@ function acidace_wave_command_input_successful() => prev(acidace_wave_command_st
 function card_minigame_cc1_card_flipped() => 
     current_map_id == 0x53 
     && card_cc1_incomplete() 
+    // This is to prevent an unwanted card flip when we first step onto the board
     && prev(card_minigame_cc1_state) != 0x6f55
+    // This is to ensure that we get the final flip count when the last card in a game is flipped
+    // otherwise the state address is changed to 0x0 on the same frame that we get the flip and it isn't counted
     && (prev(card_minigame_cc1_state) == 0x705d || card_minigame_cc1_state == 0x705d)
+    // Check for boolean flip
     && prev(card_minigame_card_flip_count) != card_minigame_card_flip_count
 function card_minigame_cc2_card_flipped() => 
     current_map_id == 0x54 
@@ -768,7 +778,7 @@ function card_minigame_cc3_card_flipped() =>
     && prev(card_minigame_card_flip_count) != card_minigame_card_flip_count
 function event_chip_protection() {
     event_chips = [0x183, 0x184, 0x185, 0xce, 0xcf]
-    
+    // Check all 30 folder slots to see if an event card is equipped
     return all_of(range(0xf9846, 0xf9880, 2), chip_slot =>
         none_of(event_chips, chip => word(chip_slot) == chip)
     )
@@ -782,6 +792,7 @@ function event_chip_usage_count() {
     )
 }
 
+// Check to make sure that at least 1 unique ability is obtained from abilities_list
 unique_abilities_accumulated = []
 for abilities in abilities_list {
     array_push(unique_abilities_accumulated, once(any_of(abilities, addr => byte(addr) > 0)))
@@ -790,10 +801,12 @@ gained_any_ability = any_of(abilities_list, variants =>
     any_of(variants, addr => prev(byte(addr)) == 0 && byte(addr) > 0)
 )
 
+// Set up an initial 92 hits for our card flip minigame
 card_flip_allotment = []
 for i in range(1, 92) {
     array_push(card_flip_allotment, once(always_true()))   
 }
+// Deduct 1 hit from the 92 accumulated above whenever we flip a card
 array_push(card_flip_allotment, deduct(card_minigame_cc1_card_flipped()))
 array_push(card_flip_allotment, deduct(card_minigame_cc2_card_flipped()))
 array_push(card_flip_allotment, deduct(card_minigame_cc3_card_flipped()))
@@ -801,17 +814,17 @@ array_push(card_flip_allotment, deduct(card_minigame_cc3_card_flipped()))
 function any_chip_used() {
     return prev(last_used_chip) != last_used_chip
 }
-
 function is_correct_chip(chip_list) {
     return any_of(chip_list, (id) => last_used_chip == id)
 }
-
 function deleted_virus_within_one_second(chip_list) {
     frames_in_1_second = 60
-  
+    
+    // Start a timer whenever we use a card
     timer_active = once(any_chip_used())
     timer_expired = repeated(frames_in_1_second, timer_active && always_true())
 
+    // If our 60 frame timer is active, the last chip used is of the correct type, and an enemy is deleted, unlock the achievement
     return timer_active
         && never(timer_expired)
         && is_correct_chip(chip_list)
@@ -826,16 +839,17 @@ achievement(
     title = "Read the Forum Post",
     description = "Achievement restrictions are in place",
     points = 0,
+    // Display when starting a game
     trigger = prev(game_state) == 4
         && game_state == 5
-        && tutorial_battles_complete == 0
+        && spademagnus_scenario_end == 0
 )
 
 // Progression/Win
 achievement(
     id = 605904,
     type = "progression",
-    title = "You Really Missed School, Huh?",
+    title = "[VOID] You Really Missed School, Huh?",
     description = "Clear the viruses out of the Sprinkler CC and introduce yourself to the Science Club",
     points = 1,
     trigger = prev(tutorial_battles_complete) == 0
@@ -870,6 +884,7 @@ achievement(
     description = "Discover and defeat any V2 story boss before arriving at Orbital Base",
     points = 3,
     trigger = (
+            // All V2 bosses and their overworld locations
             (enemy1_id == 0x81 && current_map_id == 0x0)
             || (enemy1_id == 0x82 && current_map_id == 0x10)
             || (enemy1_id == 0x83 && current_map_id == 0x17)
@@ -1032,7 +1047,6 @@ achievement(
 )
 
 achievement(
-    //TODO: Trigger
     id = 607089,
     type = "missable",
     title = "Flawless Evaluation",
@@ -1084,6 +1098,7 @@ achievement(
     trigger = (
         cipher_code_protection() 
         && real_brother_protection()
+        // Restrict the challenge start to before the first card game is completed otherwise the challenge would not be possible
         && once(
             prev(current_map_id) == 0x20
             && current_map_id == 0x53
@@ -1091,10 +1106,12 @@ achievement(
             && first_card_minigame_incomplete()
         )
         && prev(card_minigame_event_end) == 0
+        // Unlock when the last minigame is finished
         && trigger_when(
             current_map_id == 0x55 
             && card_minigame_event_end == 1
         )
+        // Allow only up to 92 flips, resetting on the the 93rd
         && never(tally(
             93, 
             card_minigame_cc1_card_flipped(),
@@ -1102,8 +1119,10 @@ achievement(
             card_minigame_cc3_card_flipped()
         )) 
         && (
-            // Credit to Souzooka for the forced alt measured structure
+            // Forced alt measured structure, otherwise these end up in Core and break the achievement
+            // Credit to Souzooka
             bit0(0x0) == prev(bit0(0x0))
+            // Visual-only decrementing measured
             || measured(tally(92, card_flip_allotment))
         )
     )
@@ -1286,6 +1305,7 @@ achievement(
     points = 3,
     trigger = acidace_wave_command_input_successful()
         && in_battle()
+        // List of all AcidAce cards
         && (last_used_chip == 0xa9 || last_used_chip == 0xaa || last_used_chip == 0xab || last_used_chip == 0x16e)
         && cipher_code_protection()
         && real_brother_protection()
@@ -1319,6 +1339,8 @@ achievement(
         in_battle()
         && current_noise_form == 2
         && any_enemy_just_deleted()
+        // Tiles 5, 10, and 15 are always left, middle, and right respectively
+        // We check what tile Mega is on and both possible states
         && ((
             megaman_on_left_tile() 
             && (tile5_is_broken() || tile5_is_hole())
@@ -1451,6 +1473,8 @@ achievement(
     title = "Hometown Hoarder",
     description = "Collect every blue and purple Mystery Wave in Echo Ridge",
     points = 5,
+    // This (prev == 1) and (x - waves == x) was used because these bitflags are inverted, becoming 0 when collected
+    // Structuring it like this creates a SubSource mem chain which shows the correct measured display for the player
     trigger = prev(echoridge_mystery_waves) == 1
         && measured(10 - echoridge_mystery_waves == 10, on_wave_road_or_cc())
         && in_overworld()
@@ -1655,7 +1679,7 @@ achievement(
     trigger = in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
-        // Normalize pickup counts to Mega Man HP display value for measured
+        // Normalize pickup counts to Mega Man's HP display value for measured
         && (prev(100 + (hpmem10_count * 10) + (hpmem20_count * 20) == 980) 
             || prev(100 + (hpmem10_count * 10) + (hpmem20_count * 20) == 990))
         && measured(100 + (hpmem10_count * 10) + (hpmem20_count * 20) == 1000)
@@ -1676,6 +1700,7 @@ achievement(
 achievement(
     id = 607124,
     title = "The Gang's All Here",
+    // The reason we collect 47 is because each provides unique dialog in Mr. Hertz CC, up to 47 total
     description = "Rescue 47 Hertz",
     points = 5, 
     trigger = at_results_screen()
@@ -1742,6 +1767,7 @@ achievement(
 achievement(
     id = 607127,
     title = "The Omega Syndicate",
+    // We only require 1 since these are random encounters and defeating at least 1 shows off the content while showing proficiency
     description = "Defeat QueenVirgoΩ or JackCorvusΩ",
     points = 10,
     trigger = (current_map_id == 0xad || current_map_id == 0xae || current_map_id == 0xaf)
@@ -1863,6 +1889,9 @@ for boss in boss_list {
 }
 
 // Protection
+// Only 1 of 3 is currently implemented because it's especially important and could brick a save file
+// The others if implemented could end up being more of a nuisance since we already warn players twice via the achievement and forum post
+
 //leaderboard(
     //id = ,
 //    title = "",
@@ -1942,6 +1971,7 @@ rich_presence_conditional_display(
     rich_presence_macro("Number", current_battle_hp),
     rich_presence_macro("Number", max_battle_hp)
 )
+// Separate displays are used per virus since our null pointers having 0 would display a Mettena which is not intended
 rich_presence_conditional_display(
     fighting_three_viruses(),// && not_in_submenu(),
     "Deleting viruses | 🛣️{0} | HP: {1}/{2} | {3}, {4}, {5}",
