@@ -845,22 +845,6 @@ achievement(
         && spademagnus_scenario_end == 0
 )
 
-// Progression/Win
-achievement(
-    id = 605904,
-    type = "progression",
-    title = "[VOID] You Really Missed School, Huh?",
-    description = "Clear the viruses out of the Sprinkler CC and introduce yourself to the Science Club",
-    points = 1,
-    trigger = prev(tutorial_battles_complete) == 0
-        && tutorial_battles_complete == 1
-        && in_overworld()
-        && player_movement_not_allowed()
-        && event_chip_protection()
-        && cipher_code_protection()
-        && real_brother_protection()
-)
-
 achievement(
     id = 605654,
     type = "progression",
