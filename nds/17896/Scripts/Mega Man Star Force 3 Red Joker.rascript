@@ -1460,7 +1460,8 @@ achievement(
     // This (prev == 1) and (x - waves == x) was used because these bitflags are inverted, becoming 0 when collected
     // Structuring it like this creates a SubSource mem chain which shows the correct measured display for the player
     trigger = prev(echoridge_mystery_waves) == 1
-        && measured(10 - echoridge_mystery_waves == 10, on_wave_road_or_cc())
+        && measured(10 - echoridge_mystery_waves == 10)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1472,7 +1473,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Echo Ridge Elementary",
     points = 5,
     trigger = prev(echoridgeelem_mystery_waves) == 1
-        && measured(18 - echoridgeelem_mystery_waves == 18, on_wave_road_or_cc())
+        && measured(18 - echoridgeelem_mystery_waves == 18)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1484,7 +1486,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Spica Mall",
     points = 5,
     trigger = prev(spicamall_mystery_waves) == 1
-        && measured(22 - spicamall_mystery_waves == 22, on_wave_road_or_cc())
+        && measured(22 - spicamall_mystery_waves == 22)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1496,7 +1499,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in WBG Studios",
     points = 5,
     trigger = prev(wbgstudios_mystery_waves) == 1 
-        && measured(26 - wbgstudios_mystery_waves == 26, on_wave_road_or_cc())
+        && measured(26 - wbgstudios_mystery_waves == 26)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1508,7 +1512,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Alohaha",
     points = 5,
     trigger = prev(alohaha_mystery_waves) == 1
-        && measured(20 - alohaha_mystery_waves == 20, on_wave_road_or_cc())
+        && measured(20 - alohaha_mystery_waves == 20)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1520,7 +1525,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in National WAZA HQ",
     points = 5,
     trigger = prev(wazahq_mystery_waves) == 1
-        && measured(21 - wazahq_mystery_waves == 21, on_wave_road_or_cc())
+        && measured(21 - wazahq_mystery_waves == 21)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1532,7 +1538,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Orbital Base",
     points = 5,
     trigger = prev(orbitalbase_mystery_waves) == 1
-        && measured(6 - orbitalbase_mystery_waves == 6, on_wave_road_or_cc())
+        && measured(6 - orbitalbase_mystery_waves == 6)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1544,7 +1551,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Astro Wave",
     points = 5,
     trigger = prev(astrowave_mystery_waves) == 1
-        && measured(5 - astrowave_mystery_waves == 5, on_wave_road_or_cc())
+        && measured(5 - astrowave_mystery_waves == 5)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1556,7 +1564,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Secret Shelter",
     points = 5,
     trigger = prev(secretshelter_mystery_waves) == 1
-        && measured(16 - secretshelter_mystery_waves == 16, on_wave_road_or_cc())
+        && measured(16 - secretshelter_mystery_waves == 16)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1568,7 +1577,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Noise Waves",
     points = 5,
     trigger = prev(noisewave_mystery_waves) == 1
-        && measured(39 - noisewave_mystery_waves == 39, on_wave_road_or_cc())
+        && measured(39 - noisewave_mystery_waves == 39)
+        && on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1593,7 +1603,8 @@ achievement(
     description = "Complete all help requests in Echo Ridge",
     points = 10,
     trigger = prev(echo_ridge_help_requests) == 7
-        && measured(echo_ridge_help_requests == 8, in_overworld())
+        && measured(echo_ridge_help_requests == 8)
+        &&in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1604,7 +1615,8 @@ achievement(
     description = "Complete all help requests in Spica Mall",
     points = 10,
     trigger = prev(spica_mall_help_requests) == 2
-        && measured(spica_mall_help_requests == 3, in_overworld())
+        && measured(spica_mall_help_requests == 3)
+        && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1615,7 +1627,8 @@ achievement(
     description = "Complete all help requests in WBG Studios",
     points = 10,
     trigger = prev(wbg_studio_help_requests) == 2
-        && measured(wbg_studio_help_requests == 3, in_overworld())
+        && measured(wbg_studio_help_requests == 3)
+        && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1626,7 +1639,8 @@ achievement(
     description = "Complete all help requests in WAZA HQ",
     points = 10,
     trigger = prev(waza_hq_help_requests) == 8
-        && measured(waza_hq_help_requests == 9, in_overworld())
+        && measured(waza_hq_help_requests == 9)
+        && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1698,7 +1712,8 @@ achievement(
     title = "Lawless Loadout",
     description = "Obtain 30 unique illegal cards",
     points = 5,
-    trigger = prev(illegal_library_total_cards == 29) && measured(illegal_library_total_cards == 30, game_state == 0x5 || game_state == 0xa)
+    trigger = prev(illegal_library_total_cards == 29) && measured(illegal_library_total_cards == 30)
+        && (game_state == 0x5 || game_state == 0xa)
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1721,7 +1736,8 @@ achievement(
     description = "Complete the Standard chip library",
     points = 10,
     trigger = prev(std_library_total_cards) == 149 
-        && measured(std_library_total_cards == 150, game_state == 0x5 || game_state == 0xa)
+        && measured(std_library_total_cards == 150)
+        && (game_state == 0x5 || game_state == 0xa)
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1732,7 +1748,8 @@ achievement(
     description = "Complete the Mega chip library",
     points = 10,
     trigger = prev(mega_library_total_cards) == 44 
-        && measured(mega_library_total_cards == 45, game_state == 0x5 || game_state == 0xa)
+        && measured(mega_library_total_cards == 45)
+        && (game_state == 0x5 || game_state == 0xa)
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1743,7 +1760,8 @@ achievement(
     description = "Complete the Giga chip library",
     points = 10,
     trigger = prev(giga_library_total_cards) == 4 
-        && measured(giga_library_total_cards == 5, game_state == 0x5 || game_state == 0xa)
+        && measured(giga_library_total_cards == 5)
+        && (game_state == 0x5 || game_state == 0xa)
         && cipher_code_protection()
         && real_brother_protection()
 )
