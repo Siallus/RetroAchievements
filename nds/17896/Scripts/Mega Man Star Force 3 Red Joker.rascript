@@ -358,88 +358,88 @@ virus_list = [
 ]
 
 boss_list = [
-    { "id": 129, "variant": 0, "name": "Spade Magnus",      "leaderboard_id": 160302 },
-    { "id": 129, "variant": 1, "name": "Spade Magnus V2",   "leaderboard_id": 160303 },
-    { "id": 129, "variant": 2, "name": "Spade Magnus V3",   "leaderboard_id": 160304 },
-    { "id": 129, "variant": 3, "name": "Spade Magnus R",    "leaderboard_id": 160305 },
-    { "id": 129, "variant": 4, "name": "Spade Magnus Ω",    "leaderboard_id": 160306 },
-    { "id": 130, "variant": 0, "name": "Diamond Ice",       "leaderboard_id": 160307 },
-    { "id": 130, "variant": 1, "name": "Diamond Ice V2",    "leaderboard_id": 160308 },
-    { "id": 130, "variant": 2, "name": "Diamond Ice V3",    "leaderboard_id": 160309 },
-    { "id": 130, "variant": 3, "name": "Diamond Ice R",     "leaderboard_id": 160310 },
-    { "id": 130, "variant": 4, "name": "Diamond Ice Ω",     "leaderboard_id": 160311 },
-    { "id": 131, "variant": 0, "name": "Club Strong",       "leaderboard_id": 160312 },
-    { "id": 131, "variant": 1, "name": "Club Strong V2",    "leaderboard_id": 160313 },
-    { "id": 131, "variant": 2, "name": "Club Strong V3",    "leaderboard_id": 160314 },
-    { "id": 131, "variant": 3, "name": "Club Strong R",     "leaderboard_id": 160315 },
-    { "id": 131, "variant": 4, "name": "Club Strong Ω",     "leaderboard_id": 160316 },
-    { "id": 132, "variant": 0, "name": "Queen Virgo",       "leaderboard_id": 160317 },
-    { "id": 132, "variant": 1, "name": "Queen Virgo V2",    "leaderboard_id": 160318 },
-    { "id": 132, "variant": 2, "name": "Queen Virgo V3",    "leaderboard_id": 160319 },
-    { "id": 132, "variant": 3, "name": "Queen Virgo R",     "leaderboard_id": 160320 },
-    { "id": 132, "variant": 4, "name": "Queen Virgo Ω",     "leaderboard_id": 160321 },
-    { "id": 133, "variant": 0, "name": "Jack Corvus",       "leaderboard_id": 160322 },
-    { "id": 133, "variant": 1, "name": "Jack Corvus V2",    "leaderboard_id": 160323 },
-    { "id": 133, "variant": 2, "name": "Jack Corvus V3",    "leaderboard_id": 160324 },
-    { "id": 133, "variant": 3, "name": "Jack Corvus R",     "leaderboard_id": 160325 },
-    { "id": 133, "variant": 4, "name": "Jack Corvus Ω",     "leaderboard_id": 160326 },
-    { "id": 134, "variant": 0, "name": "Dread Joker",       "leaderboard_id": 160327 },
-    { "id": 134, "variant": 1, "name": "Dread Joker V2",    "leaderboard_id": 160328 },
-    { "id": 134, "variant": 2, "name": "Dread Joker V3",    "leaderboard_id": 160329 },
-    { "id": 134, "variant": 3, "name": "Dread Joker R",     "leaderboard_id": 160330 },
+    { "id": 129, "variant": 0, "name": "SpadeMagnus",     "leaderboard_id": 160302 },
+    { "id": 129, "variant": 1, "name": "SpadeMagnusV2",   "leaderboard_id": 160303 },
+    { "id": 129, "variant": 2, "name": "SpadeMagnusV3",   "leaderboard_id": 160304 },
+    { "id": 129, "variant": 3, "name": "SpadeMagnusR",    "leaderboard_id": 160305 },
+    { "id": 129, "variant": 4, "name": "SpadeMagnusΩ",    "leaderboard_id": 160306 },
+    { "id": 130, "variant": 0, "name": "DiamondIce",      "leaderboard_id": 160307 },
+    { "id": 130, "variant": 1, "name": "DiamondIceV2",    "leaderboard_id": 160308 },
+    { "id": 130, "variant": 2, "name": "DiamondIceV3",    "leaderboard_id": 160309 },
+    { "id": 130, "variant": 3, "name": "DiamondIceR",     "leaderboard_id": 160310 },
+    { "id": 130, "variant": 4, "name": "DiamondIceΩ",     "leaderboard_id": 160311 },
+    { "id": 131, "variant": 0, "name": "ClubStrong",      "leaderboard_id": 160312 },
+    { "id": 131, "variant": 1, "name": "ClubStrongV2",    "leaderboard_id": 160313 },
+    { "id": 131, "variant": 2, "name": "ClubStrongV3",    "leaderboard_id": 160314 },
+    { "id": 131, "variant": 3, "name": "ClubStrongR",     "leaderboard_id": 160315 },
+    { "id": 131, "variant": 4, "name": "ClubStrongΩ",     "leaderboard_id": 160316 },
+    { "id": 132, "variant": 0, "name": "QueenVirgo",      "leaderboard_id": 160317 },
+    { "id": 132, "variant": 1, "name": "QueenVirgoV2",    "leaderboard_id": 160318 },
+    { "id": 132, "variant": 2, "name": "QueenVirgoV3",    "leaderboard_id": 160319 },
+    { "id": 132, "variant": 3, "name": "QueenVirgoR",     "leaderboard_id": 160320 },
+    { "id": 132, "variant": 4, "name": "QueenVirgoΩ",     "leaderboard_id": 160321 },
+    { "id": 133, "variant": 0, "name": "JackCorvus",      "leaderboard_id": 160322 },
+    { "id": 133, "variant": 1, "name": "JackCorvusV2",    "leaderboard_id": 160323 },
+    { "id": 133, "variant": 2, "name": "JackCorvusV3",    "leaderboard_id": 160324 },
+    { "id": 133, "variant": 3, "name": "JackCorvusR",     "leaderboard_id": 160325 },
+    { "id": 133, "variant": 4, "name": "JackCorvusΩ",     "leaderboard_id": 160326 },
+    { "id": 134, "variant": 0, "name": "DreadJoker",      "leaderboard_id": 160327 },
+    { "id": 134, "variant": 1, "name": "DreadJokerV2",    "leaderboard_id": 160328 },
+    { "id": 134, "variant": 2, "name": "DreadJokerV3",    "leaderboard_id": 160329 },
+    { "id": 134, "variant": 3, "name": "DreadJokerR",     "leaderboard_id": 160330 },
     // Unobtainable without Wi-Fi connectivity
-    //{ "id": 134, "variant": 4, "name": "Dread Joker RR",  "leaderboard_id":  },
-    { "id": 135, "variant": 0, "name": "Crimson Dragon",    "leaderboard_id": 160331 },
+    //{ "id": 134, "variant": 4, "name": "DreadJokerRR",  "leaderboard_id":  },
+    { "id": 135, "variant": 0, "name": "CrimsonDragon",   "leaderboard_id": 160331 },
     // Phase 2 variant which goes unnamed
     //{ "id": 135, "variant": 1, "name": "Crimson Dragon",  },"leaderboard_id": 160333 },
-    { "id": 135, "variant": 2, "name": "Crimson Dragon SP", "leaderboard_id": 160332 },
+    { "id": 135, "variant": 2, "name": "CrimsonDragonSP", "leaderboard_id": 160332 },
     // Phase 2 variant which goes unnamed
     //{ "id": 135, "variant": 3, "name": "Crimson Dragon",  },"leaderboard_id": 160333 },
-    { "id": 135, "variant": 4, "name": "Crimson Dragon Σ",  "leaderboard_id": 160333 },
-    { "id": 136, "variant": 0, "name": "Taurus Fire",       "leaderboard_id": 160334 },
-    { "id": 136, "variant": 1, "name": "Taurus Fire V2",    "leaderboard_id": 160335 },
-    { "id": 136, "variant": 2, "name": "Taurus Fire V3",    "leaderboard_id": 160336 },
-    { "id": 136, "variant": 3, "name": "Taurus Fire R",     "leaderboard_id": 160337 },
-    { "id": 136, "variant": 4, "name": "Taurus Fire Ω",     "leaderboard_id": 160338 },
-    { "id": 137, "variant": 0, "name": "Rogue",             "leaderboard_id": 160339 },
-    { "id": 137, "variant": 1, "name": "Rogue V2",          "leaderboard_id": 160340 },
-    { "id": 137, "variant": 2, "name": "Rogue V3",          "leaderboard_id": 160341 },
-    { "id": 137, "variant": 3, "name": "Rogue Z",           "leaderboard_id": 160342 },
-    { "id": 137, "variant": 4, "name": "Rogue ZZ",          "leaderboard_id": 160343 },
-    { "id": 138, "variant": 0, "name": "Acid Ace",          "leaderboard_id": 160344 },
-    { "id": 138, "variant": 1, "name": "Acid Ace B",        "leaderboard_id": 160345 },
-    { "id": 138, "variant": 2, "name": "Acid Ace V3",       "leaderboard_id": 160346 },
-    { "id": 138, "variant": 3, "name": "Acid Ace R",        "leaderboard_id": 160347 },
+    { "id": 135, "variant": 4, "name": "CrimsonDragonΣ",  "leaderboard_id": 160333 },
+    { "id": 136, "variant": 0, "name": "TaurusFire",      "leaderboard_id": 160334 },
+    { "id": 136, "variant": 1, "name": "TaurusFireV2",    "leaderboard_id": 160335 },
+    { "id": 136, "variant": 2, "name": "TaurusFireV3",    "leaderboard_id": 160336 },
+    { "id": 136, "variant": 3, "name": "TaurusFireR",     "leaderboard_id": 160337 },
+    { "id": 136, "variant": 4, "name": "TaurusFireΩ",     "leaderboard_id": 160338 },
+    { "id": 137, "variant": 0, "name": "Rogue",           "leaderboard_id": 160339 },
+    { "id": 137, "variant": 1, "name": "RogueV2",         "leaderboard_id": 160340 },
+    { "id": 137, "variant": 2, "name": "RogueV3",         "leaderboard_id": 160341 },
+    { "id": 137, "variant": 3, "name": "RogueZ",          "leaderboard_id": 160342 },
+    { "id": 137, "variant": 4, "name": "RogueZZ",         "leaderboard_id": 160343 },
+    { "id": 138, "variant": 0, "name": "AcidAce",         "leaderboard_id": 160344 },
+    { "id": 138, "variant": 1, "name": "AcidAceB",        "leaderboard_id": 160345 },
+    { "id": 138, "variant": 2, "name": "AcidAceV3",       "leaderboard_id": 160346 },
+    { "id": 138, "variant": 3, "name": "AcidAceR",        "leaderboard_id": 160347 },
     // Unobtainable without Wi-Fi connectivity
-    //{ "id": 138, "variant": 4, "name": "Acid Ace BB",     "leaderboard_id":  },
-    { "id": 139, "variant": 0, "name": "Dark Phantom",      "leaderboard_id": 160348 },
-    { "id": 139, "variant": 1, "name": "Dark Phantom V2",   "leaderboard_id": 160349 },
-    { "id": 139, "variant": 2, "name": "Dark Phantom V3",   "leaderboard_id": 160350 },
-    { "id": 139, "variant": 3, "name": "Dark Phantom R",    "leaderboard_id": 160351 },
-    { "id": 139, "variant": 4, "name": "Dark Phantom Ω",    "leaderboard_id": 160352 },
-    { "id": 140, "variant": 0, "name": "Cygnus Wing",       "leaderboard_id": 160353 },
-    { "id": 140, "variant": 1, "name": "Cygnus Wing V2",    "leaderboard_id": 160354 },
-    { "id": 140, "variant": 2, "name": "Cygnus Wing V3",    "leaderboard_id": 160355 },
-    { "id": 140, "variant": 3, "name": "Cygnus Wing R",     "leaderboard_id": 160356 },
-    { "id": 140, "variant": 4, "name": "Cygnus Wing Ω",     "leaderboard_id": 160357 },
-    { "id": 141, "variant": 0, "name": "Wolf Woods",        "leaderboard_id": 160358 },
-    { "id": 141, "variant": 1, "name": "Wolf Woods V2",     "leaderboard_id": 160359 },
-    { "id": 141, "variant": 2, "name": "Wolf Woods V3",     "leaderboard_id": 160360 },
-    { "id": 141, "variant": 3, "name": "Wolf Woods R",      "leaderboard_id": 160361 },
-    { "id": 141, "variant": 4, "name": "Wolf Woods Ω",      "leaderboard_id": 160362 },
-    { "id": 142, "variant": 0, "name": "Moon Destroyer",    "leaderboard_id": 160363 },
-    { "id": 142, "variant": 1, "name": "Moon Destroyer V2", "leaderboard_id": 160364 },
-    { "id": 142, "variant": 2, "name": "Moon Destroyer V3", "leaderboard_id": 160365 },
-    { "id": 142, "variant": 3, "name": "Moon Destroyer R",  "leaderboard_id": 160366 },
-    { "id": 142, "variant": 4, "name": "Moon Destroyer Σ",  "leaderboard_id": 160367 },
-    { "id": 143, "variant": 0, "name": "Apollo Flame",      "leaderboard_id": 160368 },
-    { "id": 143, "variant": 1, "name": "Apollo Flame V2",   "leaderboard_id": 160369 },
-    { "id": 143, "variant": 2, "name": "Apollo Flame V3",   "leaderboard_id": 160370 },
-    { "id": 143, "variant": 4, "name": "Apollo Flame Σ",    "leaderboard_id": 160372 },
-    { "id": 144, "variant": 0, "name": "Sirius",            "leaderboard_id": 160373 },
-    { "id": 144, "variant": 1, "name": "Sirius V2",         "leaderboard_id": 160374 },
-    { "id": 144, "variant": 2, "name": "Sirius V3",         "leaderboard_id": 160375 },
-    { "id": 144, "variant": 4, "name": "Sirius Σ",          "leaderboard_id": 160377 },
+    //{ "id": 138, "variant": 4, "name": "AcidAceBB",     "leaderboard_id":  },
+    { "id": 139, "variant": 0, "name": "DarkPhantom",     "leaderboard_id": 160348 },
+    { "id": 139, "variant": 1, "name": "DarkPhantomV2",   "leaderboard_id": 160349 },
+    { "id": 139, "variant": 2, "name": "DarkPhantomV3",   "leaderboard_id": 160350 },
+    { "id": 139, "variant": 3, "name": "DarkPhantomR",    "leaderboard_id": 160351 },
+    { "id": 139, "variant": 4, "name": "DarkPhantomΩ",    "leaderboard_id": 160352 },
+    { "id": 140, "variant": 0, "name": "CygnusWing",      "leaderboard_id": 160353 },
+    { "id": 140, "variant": 1, "name": "CygnusWingV2",    "leaderboard_id": 160354 },
+    { "id": 140, "variant": 2, "name": "CygnusWingV3",    "leaderboard_id": 160355 },
+    { "id": 140, "variant": 3, "name": "CygnusWingR",     "leaderboard_id": 160356 },
+    { "id": 140, "variant": 4, "name": "CygnusWingΩ",     "leaderboard_id": 160357 },
+    { "id": 141, "variant": 0, "name": "WolfWoods",       "leaderboard_id": 160358 },
+    { "id": 141, "variant": 1, "name": "WolfWoodsV2",     "leaderboard_id": 160359 },
+    { "id": 141, "variant": 2, "name": "WolfWoodsV3",     "leaderboard_id": 160360 },
+    { "id": 141, "variant": 3, "name": "WolfWoodsR",      "leaderboard_id": 160361 },
+    { "id": 141, "variant": 4, "name": "WolfWoodsΩ",      "leaderboard_id": 160362 },
+    { "id": 142, "variant": 0, "name": "MoonDestroyer",   "leaderboard_id": 160363 },
+    { "id": 142, "variant": 1, "name": "MoonDestroyerV2", "leaderboard_id": 160364 },
+    { "id": 142, "variant": 2, "name": "MoonDestroyerV3", "leaderboard_id": 160365 },
+    { "id": 142, "variant": 3, "name": "MoonDestroyerR",  "leaderboard_id": 160366 },
+    { "id": 142, "variant": 4, "name": "MoonDestroyerΣ",  "leaderboard_id": 160367 },
+    { "id": 143, "variant": 0, "name": "ApolloFlame",     "leaderboard_id": 160368 },
+    { "id": 143, "variant": 1, "name": "ApolloFlameV2",   "leaderboard_id": 160369 },
+    { "id": 143, "variant": 2, "name": "ApolloFlameV3",   "leaderboard_id": 160370 },
+    { "id": 143, "variant": 4, "name": "ApolloFlameΣ",    "leaderboard_id": 160372 },
+    { "id": 144, "variant": 0, "name": "Sirius",          "leaderboard_id": 160373 },
+    { "id": 144, "variant": 1, "name": "SiriusV2",        "leaderboard_id": 160374 },
+    { "id": 144, "variant": 2, "name": "SiriusV3",        "leaderboard_id": 160375 },
+    { "id": 144, "variant": 4, "name": "SiriusΣ",         "leaderboard_id": 160377 },
 ]
 
 // Create a single key/value pair for each virus and boss for easy RP lookups
@@ -845,6 +845,7 @@ achievement(
         && spademagnus_scenario_end == 0
 )
 
+// Progression/Win
 achievement(
     id = 605654,
     type = "progression",
@@ -861,7 +862,6 @@ achievement(
 )
 
 achievement(
-    // TODO: Wording
     id = 608170,
     type = "missable",
     title = "What Are You Doing Here?",
@@ -1115,7 +1115,7 @@ achievement(
 achievement(
     id = 607094,
     title = "Opposites Detract",
-    description = "Defeat Spade Magnus R with an S rank",
+    description = "Defeat SpadeMagnusR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x81
@@ -1129,7 +1129,7 @@ achievement(
 achievement(
     id = 607095,
     title = "Clear-Cut Victory",
-    description = "Defeat Club Strong R with an S rank",
+    description = "Defeat ClubStrongR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x83
@@ -1143,7 +1143,7 @@ achievement(
 achievement(
     id = 607096,
     title = "Smoke and Mirrors",
-    description = "Defeat Dark Phantom R with an S rank",
+    description = "Defeat DarkPhantomR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8b
@@ -1157,7 +1157,7 @@ achievement(
 achievement(
     id = 607097,
     title = "Flawless Cut",
-    description = "Defeat Diamond Ice R with an S rank",
+    description = "Defeat DiamondIceR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x82
@@ -1171,7 +1171,7 @@ achievement(
 achievement(
     id = 607098,
     title = "No Fly Zone",
-    description = "Defeat Cygnus Wing R with an S rank",
+    description = "Defeat CygnusWingR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8c
@@ -1185,7 +1185,7 @@ achievement(
 achievement(
     id = 607099,
     title = "Crying Wolf",
-    description = "Defeat Wolf Woods R with an S rank",
+    description = "Defeat WolfWoodsR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8d
@@ -1199,7 +1199,7 @@ achievement(
 achievement(
     id = 607100,
     title = "Supernova Disarmament",
-    description = "Defeat Moon Destroyer R with an S rank",
+    description = "Defeat MoonDestroyerR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8e
@@ -1213,7 +1213,7 @@ achievement(
 achievement(
     id = 607101,
     title = "Well Done",
-    description = "Defeat Taurus Fire R with an S rank",
+    description = "Defeat TaurusFireR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x88
@@ -1227,7 +1227,7 @@ achievement(
 achievement(
     id = 607102,
     title = "Swift Dethroning",
-    description = "Defeat Queen Virgo R with an S rank",
+    description = "Defeat QueenVirgoR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x84
@@ -1241,7 +1241,7 @@ achievement(
 achievement(
     id = 607103,
     title = "Discarded Jack",
-    description = "Defeat Jack Corvus R with an S rank",
+    description = "Defeat JackCorvusR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x85
@@ -1255,7 +1255,7 @@ achievement(
 achievement(
     id = 607104,
     title = "Dread Naught",
-    description = "Defeat Dread Joker R with an S rank",
+    description = "Defeat DreadJokerR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x86
@@ -1269,7 +1269,7 @@ achievement(
 achievement(
     id = 607105,
     title = "Perfectly Neutralized",
-    description = "Defeat Acid Ace R with an S rank",
+    description = "Defeat AcidAceR with an S rank",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8a
@@ -1282,7 +1282,6 @@ achievement(
 
 // Feature Display/Fun
 achievement(
-    //TODO: Trigger;
     id = 607106,
     title = "Wave Command Accepted",
     description = "Successfully perform a second slash with any AcidAce card",
@@ -1299,7 +1298,7 @@ achievement(
     id = 607107,
     type = "missable",
     title = "Off the Books",
-    description = "Perform a Galaxy Advance which results in an illegal card that's not yet registered in the library",
+    description = "Perform a Galaxy Advance which results in an illegal card that hasn't been obtained before",
     points = 5,
     trigger = game_state == 6
         && prev(galaxy_advance_formed == 0xffff)
@@ -1317,7 +1316,7 @@ achievement(
 achievement(
     id = 606435,
     title = "Air Superiority",
-    description = "Defeat a virus while over a broken or hole tile with Cygnus Noise",
+    description = "Defeat a virus while standing on a broken tile or hole tile while in Cygnus Noise",
     points = 5,
     trigger =
         in_battle()
@@ -1342,7 +1341,7 @@ achievement(
 achievement(
     id = 607108,
     title = "Fanning the Flames",
-    description = "Delete a virus within 1 second using a non-dimming fire card while in Taurus Noise without using the same chip twice in a row",
+    description = "Delete a virus within 1 second of using a non-dimming fire card while in Taurus Noise without using the same chip twice in a row",
     points = 5,
     trigger = current_noise_type != 0xc
         && current_noise_form == 0x7
@@ -1354,7 +1353,7 @@ achievement(
 achievement(
     id = 607109,
     title = "Tidal Wave",
-    description = "Delete a virus within 1 second using a non-dimming aqua card while in Virgo Noise without using the same chip twice in a row",
+    description = "Delete a virus within 1 second of using a non-dimming aqua card while in Virgo Noise without using the same chip twice in a row",
     points = 5,
     trigger = current_noise_type != 0xc
         && current_noise_form == 0x8
@@ -1366,7 +1365,7 @@ achievement(
 achievement(
     id = 607110,
     title = "Shock and Awe",
-    description = "Delete a virus within 1 second using a non-dimming elec card while in Crown Noise without using the same chip twice in a row",
+    description = "Delete a virus within 1 second of using a non-dimming elec card while in Crown Noise without using the same chip twice in a row",
     points = 5,
     trigger = current_noise_type != 0xc
         && current_noise_form == 0x9
@@ -1378,7 +1377,7 @@ achievement(
 achievement(
     id = 607111,
     title = "Feral Slash",
-    description = "Delete a virus within 1 second using a non-dimming sword card excluding Muramasa while in Wolf Noise without using the same chip twice in a row",
+    description = "Delete a virus within 1 second of using a non-dimming sword card excluding Muramasa while in Wolf Noise without using the same chip twice in a row",
     points = 5,
     trigger = current_noise_type != 0xc
         && current_noise_form == 0xa
@@ -1390,7 +1389,7 @@ achievement(
 achievement(
     id = 607112,
     title = "Black Ace Frequency",
-    description = "Transform into Libra Noise, Corvus Noise, Cancer Noise, Gemini Noise, or Ophiuca Noise",
+    description = "Transform into Libra Noise, Corvus Noise, Cancer Noise, Gemini Noise, or Ophiuca Noise for the first time",
     points = 5,
     trigger = (
             (prev(current_noise_form != 0x1) && current_noise_form == 0x1)
@@ -1407,7 +1406,7 @@ achievement(
 achievement(
     id = 607113,
     title = "Going Rogue",
-    description = "Transform into Rogue Noise",
+    description = "Transform into Rogue Noise for the first time",
     points = 5,
     trigger = prev(current_noise_form != 0xb) && current_noise_form == 0xb
         && game_state == 6
@@ -1587,7 +1586,7 @@ achievement(
 achievement(
     id = 605903,
     title = "The Golden Frequency",
-    description = "Collect your first gold mystery wave",
+    description = "Collect a gold mystery wave for the first time",
     points = 5,
     trigger = prev(gold_mystery_waves) == 1
         && 1 - gold_mystery_waves == 1
@@ -1600,7 +1599,7 @@ achievement(
 achievement(
     id = 607117,
     title = "Hometown Hero",
-    description = "Complete all help requests in Echo Ridge",
+    description = "Complete every help request in Echo Ridge",
     points = 10,
     trigger = prev(echo_ridge_help_requests) == 7
         && measured(echo_ridge_help_requests == 8)
@@ -1612,7 +1611,7 @@ achievement(
 achievement(
     id = 607118,
     title = "Spica Samaritan",
-    description = "Complete all help requests in Spica Mall",
+    description = "Complete every help request in Spica Mall",
     points = 10,
     trigger = prev(spica_mall_help_requests) == 2
         && measured(spica_mall_help_requests == 3)
@@ -1624,7 +1623,7 @@ achievement(
 achievement(
     id = 607119,
     title = "Production Assistant",
-    description = "Complete all help requests in WBG Studios",
+    description = "Complete every help request in WBG Studios",
     points = 10,
     trigger = prev(wbg_studio_help_requests) == 2
         && measured(wbg_studio_help_requests == 3)
@@ -1636,7 +1635,7 @@ achievement(
 achievement(
     id = 607120,
     title = "WAZA Employee of the Month",
-    description = "Complete all help requests in WAZA HQ",
+    description = "Complete every help request in WAZA HQ",
     points = 10,
     trigger = prev(waza_hq_help_requests) == 8
         && measured(waza_hq_help_requests == 9)
@@ -1733,7 +1732,7 @@ achievement(
 achievement(
     id = 596503,
     title = "Standard Issue",
-    description = "Complete the Standard chip library",
+    description = "Complete the Standard card library",
     points = 10,
     trigger = prev(std_library_total_cards) == 149 
         && measured(std_library_total_cards == 150)
@@ -1745,7 +1744,7 @@ achievement(
 achievement(
     id = 596504,
     title = "Mega Stockpile",
-    description = "Complete the Mega chip library",
+    description = "Complete the Mega card library",
     points = 10,
     trigger = prev(mega_library_total_cards) == 44 
         && measured(mega_library_total_cards == 45)
@@ -1757,7 +1756,7 @@ achievement(
 achievement(
     id = 596505,
     title = "Giga Archive",
-    description = "Complete the Giga chip library",
+    description = "Complete the Giga card library",
     points = 10,
     trigger = prev(giga_library_total_cards) == 4 
         && measured(giga_library_total_cards == 5)
@@ -1773,7 +1772,7 @@ achievement(
     description = "Defeat QueenVirgoΩ or JackCorvusΩ",
     points = 10,
     trigger = (current_map_id == 0xad || current_map_id == 0xae || current_map_id == 0xaf)
-        && (enemy1_id == 84 || enemy1_id == 84)
+        && (enemy1_id == 0x84 || enemy1_id == 0x85)
         && enemy1_variant == 4
         && finished_battle() 
         && cipher_code_protection()
@@ -1799,7 +1798,7 @@ achievement(
     description = "Defeat Sirius",
     points = 10,
     trigger = current_map_id == 0x5d
-        && enemy1_id == 90
+        && enemy1_id == 0x90
         && enemy1_variant == 0
         && finished_battle() 
         && cipher_code_protection()
@@ -1809,10 +1808,10 @@ achievement(
 achievement(
     id = 607129,
     title = "Catching ZZ's",
-    description = "Defeat Rogue ZZ",
+    description = "Defeat RogueZZ",
     points = 25,
     trigger = current_map_id == 0x67
-        && enemy1_id == 89
+        && enemy1_id == 0x89
         && enemy1_variant == 4
         && finished_battle() 
         && cipher_code_protection()
@@ -1822,7 +1821,7 @@ achievement(
 achievement(
     id = 607130,
     title = "Sigma-Level Defusal",
-    description = "Defeat Moon Destroyer Σ",
+    description = "Defeat MoonDestroyerΣ",
     points = 25,
     trigger = current_map_id == 0x27
         && enemy1_id == 0x8e
@@ -1835,7 +1834,7 @@ achievement(
 achievement(
     id = 607131,
     title = "Twilight of the Sun God",
-    description = "Defeat Apollo Flame Σ",
+    description = "Defeat ApolloFlameΣ",
     points = 25,
     trigger = current_map_id == 0x5d
         && enemy1_id == 0x8f
@@ -1848,10 +1847,10 @@ achievement(
 achievement(
     id = 607132,
     title = "Supermassive Singularity",
-    description = "Defeat Sirius Σ",
+    description = "Defeat SiriusΣ",
     points = 25,
     trigger = current_map_id == 0x22
-        && enemy1_id == 90
+        && enemy1_id == 0x90
         && enemy1_variant == 4
         && finished_battle() 
         && cipher_code_protection()
@@ -1861,10 +1860,10 @@ achievement(
 achievement(
     id = 607133,
     title = "Crimson Legend",
-    description = "Defeat Crimson Dragon Σ",
+    description = "Defeat CrimsonDragonΣ",
     points = 50,
     trigger = (current_map_id == 0xab || current_map_id == 0xac)
-        && enemy1_id == 87
+        && enemy1_id == 0x87
         && enemy1_variant == 4
         && finished_battle() 
         && cipher_code_protection()
@@ -2003,5 +2002,6 @@ rich_presence_conditional_display(
 )
 
 rich_presence_display("Playing poker with Dealer 🂡")
+
 
 
