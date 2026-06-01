@@ -754,6 +754,7 @@ function boss_fight_loaded() => boss_fight_loaded_state != 0xffff
 function player_overworld_movement_allowed() => player_overworld_control_state == 1
 function player_overworld_movement_disallowed() => player_overworld_control_state == 0
 function acidace_wave_command_input_successful() => prev(acidace_wave_command_state) == 1 && acidace_wave_command_state == 0
+function skip_leaderboard_check_for_scripted_bosses() => enemy1_id != 0x85 && current_map_id != 0x15
 function card_minigame_cc1_card_flipped() => 
     current_map_id == 0x53 
     && card_cc1_incomplete() 
@@ -768,14 +769,18 @@ function card_minigame_cc2_card_flipped() =>
     current_map_id == 0x54 
     && card_cc2_incomplete() 
     && prev(card_minigame_cc2_state) != 0x6f55
-    && (prev(card_minigame_cc1_state) == 0x705d || card_minigame_cc1_state == 0x705d)
+    && (prev(card_minigame_cc2_state) == 0x705d || card_minigame_cc2_state == 0x705d)
     && prev(card_minigame_card_flip_count) != card_minigame_card_flip_count 
 function card_minigame_cc3_card_flipped() => 
     current_map_id == 0x55 
     && card_cc3_incomplete() 
     && prev(card_minigame_cc3_state) != 0x6f55
-    && (prev(card_minigame_cc1_state) == 0x705d || card_minigame_cc1_state == 0x705d)
+    && (prev(card_minigame_cc3_state) == 0x705d || card_minigame_cc3_state == 0x705d)
     && prev(card_minigame_card_flip_count) != card_minigame_card_flip_count
+function card_minigame_fail_for_skipping() =>
+    never(card_minigame_cc1_state == 0x7755)
+    && never(card_minigame_cc2_state == 0x7755)
+    && never(card_minigame_cc3_state == 0x7755)
 function event_chip_protection() {
     event_chips = [0x183, 0x184, 0x185, 0xce, 0xcf]
     // Check all 30 folder slots to see if an event card is equipped
@@ -1077,11 +1082,13 @@ achievement(
     id = 607092,
     type = "missable",
     title = "Card Counting",
-    description = "Restore all wave roads in Crimson Factory by flipping no more than 92 cards in a single session ",
+    description = "Restore all wave roads in Crimson Factory by flipping no more than 92 cards and without skipping in a single session ",
     points = 5,
     trigger = (
         cipher_code_protection() 
         && real_brother_protection()
+        // Disallow minigame skips
+        && card_minigame_fail_for_skipping()
         // Restrict the challenge start to before the first card game is completed otherwise the challenge would not be possible
         && once(
             prev(current_map_id) == 0x20
@@ -1874,13 +1881,24 @@ achievement(
 // Leaderboards
 // Boss records
 for boss in boss_list {
+    start_condition = finished_battle() 
+        && enemy1_id == boss["id"] 
+        && enemy1_variant == boss["variant"]
+    
+    // Skip JackCorvus scripted encounter
+    if (boss["id"] == 0x85 && boss["variant"] == 0x0) {
+        start_condition = start_condition && current_map_id != 0x15
+    }
+    // Skip AcidAceB scripted encounter
+    if (boss["id"] == 0x8a && boss["variant"] == 0x1) {
+        start_condition = start_condition && current_map_id != 0x12
+    }
+
     leaderboard(
         id = boss["leaderboard_id"],
         title = format("{0} Speed Deletion", boss["name"]),
         description = format("Defeat {0} as fast as possible", boss["name"]),
-        start = finished_battle() 
-            && enemy1_id == boss["id"] 
-            && enemy1_variant == boss["variant"],
+        start = start_condition,
         cancel = always_false(),
         submit = always_true(),
         value = dword(0x18f040) * 2,
