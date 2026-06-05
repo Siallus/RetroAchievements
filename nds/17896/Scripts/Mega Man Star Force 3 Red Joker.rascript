@@ -12,6 +12,7 @@ bottom_menu_state = bit0(0x11263d)
 current_bottom_screen_menu = tbyte(0xf7768)
 boss_fight_loaded_state = word(0x1081be)
 player_overworld_control_state = bit0(0x1b16ee)
+trans_out_load_transition = byte(0xf639d)
 
 tutorial_battles_complete = bit2(0xfcb1f)
 spademagnus_scenario_end = bit3(0xfcb27)
@@ -1405,7 +1406,7 @@ achievement(
             || (prev(current_noise_form != 0x4) && current_noise_form == 0x4)
             || (prev(current_noise_form != 0x5) && current_noise_form == 0x5)
         )
-        && game_state == 6
+        && game_state == 0xa
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1416,7 +1417,7 @@ achievement(
     description = "Transform into Rogue Noise for the first time",
     points = 5,
     trigger = prev(current_noise_form != 0xb) && current_noise_form == 0xb
-        && game_state == 6
+        && game_state == 0xa
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1598,6 +1599,7 @@ achievement(
     trigger = prev(gold_mystery_waves) == 1
         && 1 - gold_mystery_waves == 1
         && in_overworld()
+        && trans_out_load_transition == 0
         && on_wave_road_or_cc()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1804,10 +1806,10 @@ achievement(
     title = "Event Horizon",
     description = "Defeat Sirius",
     points = 10,
-    trigger = current_map_id == 0x5d
+    trigger = current_map_id == 0x5b
         && enemy1_id == 0x90
         && enemy1_variant == 0
-        && finished_battle() 
+        && enemy1_just_deleted()
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1843,7 +1845,7 @@ achievement(
     title = "Twilight of the Sun God",
     description = "Defeat ApolloFlameΣ",
     points = 25,
-    trigger = current_map_id == 0x5d
+    trigger = current_map_id == 0x5b
         && enemy1_id == 0x8f
         && enemy1_variant == 4
         && finished_battle() 
