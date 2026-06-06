@@ -844,7 +844,7 @@ achievement(
     badge = "697351",
     type = "progression",
     title = "Prepare for What Lies Ahead",
-    description = "All provided event cards will block progression and win achievements. Use of real Brothers or card-granting Cipher Codes will block all achievements. Do not save with any card Cipher Codes redeemed as they cannot be unredeemed.",
+    description = "All provided event cards will block progression and win achievements. Use of real Brothers or card-granting Cipher Codes will block all achievements. Do not save with any card Cipher Codes redeemed.",
     points = 0,
     // Display when starting a game
     trigger = prev(game_state) == 4
