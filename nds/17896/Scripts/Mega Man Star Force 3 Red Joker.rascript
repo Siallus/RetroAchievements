@@ -635,14 +635,14 @@ abilities_list = [
     [0xf9476,0xf959a,0xf95d6,0xf9602,0xf962c], // Float Shoes
     [0xf9478,0xf959c,0xf95d8,0xf9604,0xf962e], // Reflect
     [0xf947a,0xf959e],                         // Super Armor
-    [0xf947c,0xf947c],                         // No Flash
+    [0xf947c,0xf95a0],                         // No Flash
     [0xf947e,0xf95a2],                         // No Gravity
     [0xf9480,0xf95a4],                         // No Paralyze
     [0xf9482,0xf95a6],                         // No Freeze
     [0xf9484,0xf95a8],                         // No Bubble
     [0xf9488,0xf95aa,0xf95da,0xf9606],         // First Barrier            
     [0xf948a,0xf95ac],                         // First Aura
-    [0xf95ce,0xf95fa,0xf9626,0xf963e],         // Mega Class +1
+    [0xf9550,0xf95ce,0xf95fa,0xf9626,0xf963e], // Mega Class +1
     [0xf9554,0xf95d0,0xf95fc,0xf9628],         // Giga Class +1
     [0xf948c,0xf95ae,0xf95dc,0xf9608],         // + V-Shot
     [0xf948e,0xf95b0,0xf95de,0xf960a,0xf9630], // + X-Shot
