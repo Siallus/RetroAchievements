@@ -139,7 +139,7 @@ illegal_library_total_cards = sum_of(range(0xfcbb6,0xfcbcc), addr => bitcount(ad
         + bit1(0xfcbcd) + bit2(0xfcbcd) + bit3(0xfcbcd) + bit4(0xfcbcd) + bit5(0xfcbcd)
 
 // Mystery Wave Logic
-alohaha_mystery_waves = bit3(0xfcafb) + bit4(0xfcafb) + bit5(0xfcafb) + bit6(0xfcafb) + bit7(0xfcafb) 
+alohaha_mystery_waves = bit4(0xfcafb) + bit5(0xfcafb) + bit6(0xfcafb) + bit7(0xfcafb) // bit3(0xfcafb) this seems bugged, not actually collectable
         + bit0(0xfcafc) + bit1(0xfcafc) + bit2(0xfcafc) + bit3(0xfcafc) + bit4(0xfcafc) + bit5(0xfcafc)
         + bit2(0xfcb07) + bit3(0xfcb07) + bit4(0xfcb07) + bit4(0xfcb09) + bit5(0xfcb09)+ bit7(0xfcb0c)
         + bit0(0xfcb0d) + bit1(0xfcb0d) + bit4(0xfcb14)
@@ -841,9 +841,10 @@ function deleted_virus_within_one_second(chip_list) {
 // Warning
 achievement(
     id = 610837,
+    badge = "697351",
     type = "progression",
-    title = "Read the Forum Post",
-    description = "Achievement restrictions are in place",
+    title = "Prepare for What Lies Ahead",
+    description = "All provided event cards will block progression and win achievements. Use of real Brothers or card-granting Cipher Codes will block all achievements. Do not save with any card Cipher Codes redeemed as they cannot be unredeemed.",
     points = 0,
     // Display when starting a game
     trigger = prev(game_state) == 4
@@ -854,6 +855,7 @@ achievement(
 // Progression/Win
 achievement(
     id = 605654,
+    badge = "697352",
     type = "progression",
     title = "Houston, We Have a Solution",
     description = "Defeat Spade Magnus and clear the way for a successful launch",
@@ -869,6 +871,7 @@ achievement(
 
 achievement(
     id = 608170,
+    badge = "697353",
     type = "missable",
     title = "What Are You Doing Here?",
     description = "Discover and defeat any V2 story boss before arriving at Orbital Base",
@@ -892,6 +895,7 @@ achievement(
 
 achievement(
     id = 605655,
+    badge = "697355",
     type = "progression",
     title = "The Show Must Go On",
     description = "Defeat Diamond Ice and return to the stage for Sonia's final song",
@@ -907,6 +911,7 @@ achievement(
 
 achievement(
     id = 605656,
+    badge = "697357",
     type = "progression",
     title = "Strong Suit",
     description = "Defeat Club Strong and uncover some hard truths about Dealer",
@@ -922,6 +927,7 @@ achievement(
 
 achievement(
     id = 605657,
+    badge = "697360",
     type = "progression",
     title = "Regal Flush",
     description = "Defeat Queen Virgo and put an end to Dealer's relentless assault on WAZA HQ",
@@ -937,6 +943,7 @@ achievement(
 
 achievement(
     id = 605659,
+    badge = "697363",
     type = "progression",
     title = "Landslide Victory",
     description = "Defeat Jack Corvus and watch the new class president get elected",
@@ -952,6 +959,7 @@ achievement(
 
 achievement(
     id = 605660,
+    badge = "697367",
     type = "win_condition",
     title = "A Stelar Reunion",
     description = "Defeat Crimson Dragon and see Earth's Purpose fulfilled, making your family whole again",
@@ -968,6 +976,7 @@ achievement(
 // Challenge
 achievement(
     id = 600311,
+    badge = "697354",
     type = "missable",
     title = "Frostbite Free",
     description = "Reach Diamond Ice without getting frozen in a single session",
@@ -982,6 +991,7 @@ achievement(
 
 achievement(
     id = 605907,
+    badge = "697356",
     type = "missable",
     title = "Alohaha Acrobat",
     description = "Reach Club Strong without tripping or falling in a single session",
@@ -996,6 +1006,7 @@ achievement(
 
 achievement(
     id = 607086,
+    badge = "697358",
     type = "missable",
     title = "Playing with Fire",
     description = "Survive your first encounter with Jack Corvus without taking damage",
@@ -1009,6 +1020,7 @@ achievement(
 
 achievement(
     id = 607087,
+    badge = "697359",
     type = "missable",
     title = "Curtain Call",
     description = "Defeat Cygnus Wing with an S rank before the end of their introduction chapter",
@@ -1024,6 +1036,7 @@ achievement(
 
 achievement(
     id = 605908,
+    badge = "697362",
     type = "missable",
     title = "Straight A's in Noise Control",
     description = "Don't miss any noise clusters in the noise monster minigames without leaving Echo Ridge Elementary in a single session",
@@ -1038,6 +1051,7 @@ achievement(
 
 achievement(
     id = 607089,
+    badge = "697364",
     type = "missable",
     title = "Flawless Evaluation",
     description = "Survive your encounter with Acid Ace without taking damage",
@@ -1051,6 +1065,7 @@ achievement(
 
 achievement(
     id = 607090,
+    badge = "697361",
     type = "missable",
     title = "Bark Worse than His Bite",
     description = "Defeat Wolf Woods with an S rank before the end of their introduction chapter",
@@ -1066,6 +1081,7 @@ achievement(
 
 achievement(
     id = 607091,
+    badge = "697365",
     type = "missable",
     title = "Disaster Averted",
     description = "Defeat Moon Destroyer with an S rank before the end of their introduction chapter",
@@ -1081,6 +1097,7 @@ achievement(
 
 achievement(
     id = 607092,
+    badge = "697366",
     type = "missable",
     title = "Card Counting",
     description = "Restore all wave roads in Crimson Factory by flipping no more than 92 cards and without skipping in a single session ",
@@ -1122,13 +1139,14 @@ achievement(
 
 achievement(
     id = 607094,
+    badge = "697405",
     title = "Opposites Detract",
-    description = "Defeat SpadeMagnusR with an S rank",
+    description = "Defeat SpadeMagnusR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x81
         && enemy1_variant == 0x3
-        && (current_map_id == 0x7a || current_map_id == 0x28)
+        && current_map_id == 0x28
         && finished_battle() 
         && cipher_code_protection()
         && real_brother_protection()
@@ -1136,154 +1154,165 @@ achievement(
 
 achievement(
     id = 607095,
+    badge = "697406",
     title = "Clear-Cut Victory",
-    description = "Defeat ClubStrongR with an S rank",
+    description = "Defeat ClubStrongR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x83
         && enemy1_variant == 0x3
-        && (current_map_id == 0x5c || current_map_id == 0x29)
-        && finished_battle() 
+        && current_map_id == 0x29
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607096,
+    badge = "697407",
     title = "Smoke and Mirrors",
-    description = "Defeat DarkPhantomR with an S rank",
+    description = "Defeat DarkPhantomR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8b
         && enemy1_variant == 0x3
-        && (current_map_id == 0x7d || current_map_id == 0xab)
-        && finished_battle() 
+        && current_map_id == 0xab
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607097,
+    badge = "697408",
     title = "Flawless Cut",
-    description = "Defeat DiamondIceR with an S rank",
+    description = "Defeat DiamondIceR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x82
         && enemy1_variant == 0x3
-        && (current_map_id == 0x77 || current_map_id == 0xab)
-        && finished_battle() 
+        && current_map_id == 0xab
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607098,
+    badge = "697409",
     title = "No Fly Zone",
-    description = "Defeat CygnusWingR with an S rank",
+    description = "Defeat CygnusWingR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8c
         && enemy1_variant == 0x3
-        && (current_map_id == 0x8a || current_map_id == 0xac)
-        && finished_battle() 
+        && current_map_id == 0xac
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607099,
+    badge = "697410",
     title = "Crying Wolf",
-    description = "Defeat WolfWoodsR with an S rank",
+    description = "Defeat WolfWoodsR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8d
         && enemy1_variant == 0x3
-        && (current_map_id == 0x73 || current_map_id == 0xac)
-        && finished_battle() 
+        && current_map_id == 0xac
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607100,
+    badge = "697411",
     title = "Supernova Disarmament",
-    description = "Defeat MoonDestroyerR with an S rank",
+    description = "Defeat MoonDestroyerR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8e
         && enemy1_variant == 0x3
-        && (current_map_id == 0x5d || current_map_id == 0xad)
-        && finished_battle() 
+        && current_map_id == 0xad
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607101,
+    badge = "697412",
     title = "Well Done",
-    description = "Defeat TaurusFireR with an S rank",
+    description = "Defeat TaurusFireR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x88
         && enemy1_variant == 0x3
-        && (current_map_id == 0x7e || current_map_id == 0xad)
-        && finished_battle() 
+        && current_map_id == 0xad
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607102,
+    badge = "697413",
     title = "Swift Dethroning",
-    description = "Defeat QueenVirgoR with an S rank",
+    description = "Defeat QueenVirgoR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x84
         && enemy1_variant == 0x3
-        && (current_map_id == 0x70 || current_map_id == 0xae)
-        && finished_battle() 
+        && current_map_id == 0xae
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607103,
+    badge = "697414",
     title = "Discarded Jack",
-    description = "Defeat JackCorvusR with an S rank",
+    description = "Defeat JackCorvusR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x85
         && enemy1_variant == 0x3
-        && (current_map_id == 0x64 || current_map_id == 0xae)
-        && finished_battle() 
+        && current_map_id == 0xae
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607104,
+    badge = "697415",
     title = "Dread Naught",
-    description = "Defeat DreadJokerR with an S rank",
+    description = "Defeat DreadJokerR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x86
         && enemy1_variant == 0x3
         && current_map_id == 0x5a
-        && finished_battle() 
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
 
 achievement(
     id = 607105,
+    badge = "697416",
     title = "Perfectly Neutralized",
-    description = "Defeat AcidAceR with an S rank",
+    description = "Defeat AcidAceR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x8a
         && enemy1_variant == 0x3
         && current_map_id == 0x5a
-        && finished_battle() 
+        && finished_battle()
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1291,6 +1320,7 @@ achievement(
 // Feature Display/Fun
 achievement(
     id = 607106,
+    badge = "697389",
     title = "Wave Command Accepted",
     description = "Successfully perform a second slash with any AcidAce card",
     points = 3,
@@ -1304,6 +1334,7 @@ achievement(
 
 achievement(
     id = 607107,
+    badge = "697390",
     type = "missable",
     title = "Off the Books",
     description = "Perform a Galaxy Advance which results in an illegal card that hasn't been obtained before",
@@ -1323,6 +1354,7 @@ achievement(
 
 achievement(
     id = 606435,
+    badge = "697391",
     title = "Air Superiority",
     description = "Defeat a virus while standing on a broken tile or hole tile while in Cygnus Noise",
     points = 5,
@@ -1348,6 +1380,7 @@ achievement(
 
 achievement(
     id = 607108,
+    badge = "697392",
     title = "Fanning the Flames",
     description = "Delete a virus within 1 second of using a non-dimming fire card while in Taurus Noise without using the same chip twice in a row",
     points = 5,
@@ -1360,6 +1393,7 @@ achievement(
 
 achievement(
     id = 607109,
+    badge = "697393",
     title = "Tidal Wave",
     description = "Delete a virus within 1 second of using a non-dimming aqua card while in Virgo Noise without using the same chip twice in a row",
     points = 5,
@@ -1372,6 +1406,7 @@ achievement(
 
 achievement(
     id = 607110,
+    badge = "697394",
     title = "Shock and Awe",
     description = "Delete a virus within 1 second of using a non-dimming elec card while in Crown Noise without using the same chip twice in a row",
     points = 5,
@@ -1384,6 +1419,7 @@ achievement(
 
 achievement(
     id = 607111,
+    badge = "697395",
     title = "Feral Slash",
     description = "Delete a virus within 1 second of using a non-dimming sword card excluding Muramasa while in Wolf Noise without using the same chip twice in a row",
     points = 5,
@@ -1396,6 +1432,7 @@ achievement(
 
 achievement(
     id = 607112,
+    badge = "697396",
     title = "Black Ace Frequency",
     description = "Transform into Libra Noise, Corvus Noise, Cancer Noise, Gemini Noise, or Ophiuca Noise for the first time",
     points = 5,
@@ -1413,6 +1450,7 @@ achievement(
 
 achievement(
     id = 607113,
+    badge = "697397",
     title = "Going Rogue",
     description = "Transform into Rogue Noise for the first time",
     points = 5,
@@ -1424,6 +1462,7 @@ achievement(
 
 achievement(
     id = 607114,
+    badge = "697398",
     title = "Access Requested",
     description = "Activate Level 1 or greater Meteor Server Access",
     points = 3,
@@ -1436,6 +1475,7 @@ achievement(
 
 achievement(
     id = 607115,
+    badge = "697399",
     title = "Access Granted",
     description = "Activate Level 6 or greater Meteor Server Access",
     points = 5,
@@ -1448,6 +1488,7 @@ achievement(
 
 achievement(
     id = 607116,
+    badge = "697400",
     title = "Access Elevated",
     description = "Activate Level 11 Meteor Server Access",
     points = 10,
@@ -1461,6 +1502,7 @@ achievement(
 // Collection/Completion
 achievement(
     id = 599555,
+    badge = "697368",
     title = "Hometown Hoarder",
     description = "Collect every blue and purple Mystery Wave in Echo Ridge",
     points = 5,
@@ -1476,6 +1518,7 @@ achievement(
 
 achievement(
     id = 599556,
+    badge = "697369",
     title = "Wave Road Scholar",
     description = "Collect every blue and purple Mystery Wave in Echo Ridge Elementary",
     points = 5,
@@ -1489,6 +1532,7 @@ achievement(
 
 achievement(
     id = 599561,
+    badge = "697370",
     title = "Bargain Hunter VG",
     description = "Collect every blue and purple Mystery Wave in Spica Mall",
     points = 5,
@@ -1502,6 +1546,7 @@ achievement(
 
 achievement(
     id = 599562,
+    badge = "697371",
     title = "Props and Drops",
     description = "Collect every blue and purple Mystery Wave in WBG Studios",
     points = 5,
@@ -1515,6 +1560,7 @@ achievement(
 
 achievement(
     id = 599553,
+    badge = "697372",
     title = "Tropical Beachcomber",
     description = "Collect every blue and purple Mystery Wave in Alohaha",
     points = 5,
@@ -1528,6 +1574,7 @@ achievement(
 
 achievement(
     id = 599557,
+    badge = "697373",
     title = "Top Secret Clearance",
     description = "Collect every blue and purple Mystery Wave in National WAZA HQ",
     points = 5,
@@ -1541,6 +1588,7 @@ achievement(
 
 achievement(
     id = 599559,
+    badge = "697374",
     title = "Zero-G Scavenger",
     description = "Collect every blue and purple Mystery Wave in Orbital Base",
     points = 5,
@@ -1554,6 +1602,7 @@ achievement(
 
 achievement(
     id = 599554,
+    badge = "697375",
     title = "Cosmic Collector",
     description = "Collect every blue and purple Mystery Wave in Astro Wave",
     points = 5,
@@ -1567,6 +1616,7 @@ achievement(
 
 achievement(
     id = 599560,
+    badge = "697376",
     title = "Dealer's Stash",
     description = "Collect every blue and purple Mystery Wave in Secret Shelter",
     points = 5,
@@ -1580,6 +1630,7 @@ achievement(
 
 achievement(
     id = 599558,
+    badge = "697377",
     title = "Signal in the Static",
     description = "Collect every blue and purple Mystery Wave in Noise Waves",
     points = 5,
@@ -1593,6 +1644,7 @@ achievement(
 
 achievement(
     id = 605903,
+    badge = "697378",
     title = "The Golden Frequency",
     description = "Collect a gold mystery wave for the first time",
     points = 5,
@@ -1607,6 +1659,7 @@ achievement(
 
 achievement(
     id = 607117,
+    badge = "697379",
     title = "Hometown Hero",
     description = "Complete every help request in Echo Ridge",
     points = 10,
@@ -1619,6 +1672,7 @@ achievement(
 
 achievement(
     id = 607118,
+    badge = "697380",
     title = "Spica Samaritan",
     description = "Complete every help request in Spica Mall",
     points = 10,
@@ -1631,6 +1685,7 @@ achievement(
 
 achievement(
     id = 607119,
+    badge = "697381",
     title = "Production Assistant",
     description = "Complete every help request in WBG Studios",
     points = 10,
@@ -1643,6 +1698,7 @@ achievement(
 
 achievement(
     id = 607120,
+    badge = "697382",
     title = "WAZA Employee of the Month",
     description = "Complete every help request in WAZA HQ",
     points = 10,
@@ -1655,6 +1711,7 @@ achievement(
 
 achievement(
     id = 607121,
+    badge = "697383",
     title = "Brothers in Arms",
     description = "Obtain 900 Link Power from in-game Brothers",
     points = 10,
@@ -1666,6 +1723,7 @@ achievement(
 
 achievement(
     id = 607122,
+    badge = "697384",
     title = "Boundless Links",
     description = "Collect at least 1 variant of every uniquely named ability",
     points = 10,
@@ -1679,6 +1737,7 @@ achievement(
 
 achievement(
     id = 607123,
+    badge = "697385",
     title = "Maximum Vitality",
     description = "Obtain 1000 HP without abilities",
     points = 10,
@@ -1694,6 +1753,7 @@ achievement(
 
 achievement(
     id = 600265,
+    badge = "697386",
     title = "Xis Marks the Spot",
     description = "Obtain every Omega-Xis weapon",
     points = 25,
@@ -1705,6 +1765,7 @@ achievement(
 
 achievement(
     id = 607124,
+    badge = "697387",
     title = "The Gang's All Here",
     // The reason we collect 47 is because each provides unique dialog in Mr. Hertz CC, up to 47 total
     description = "Rescue 47 Hertz",
@@ -1717,6 +1778,7 @@ achievement(
 
 achievement(
     id = 607125,
+    badge = "697388",
     title = "Lawless Loadout",
     description = "Obtain 30 unique illegal cards",
     points = 5,
@@ -1728,6 +1790,7 @@ achievement(
 
 achievement(
     id = 607126,
+    badge = "697401",
     title = "Omega Keymaster",
     description = "Open all 3 doors requiring Omega Pieces",
     points = 10,
@@ -1740,6 +1803,7 @@ achievement(
 
 achievement(
     id = 596503,
+    badge = "697402",
     title = "Standard Issue",
     description = "Complete the Standard card library",
     points = 10,
@@ -1752,6 +1816,7 @@ achievement(
 
 achievement(
     id = 596504,
+    badge = "697403",
     title = "Mega Stockpile",
     description = "Complete the Mega card library",
     points = 10,
@@ -1764,6 +1829,7 @@ achievement(
 
 achievement(
     id = 596505,
+    badge = "697404",
     title = "Giga Archive",
     description = "Complete the Giga card library",
     points = 10,
@@ -1776,6 +1842,7 @@ achievement(
 
 achievement(
     id = 607127,
+    badge = "697419",
     title = "The Omega Syndicate",
     // We only require 1 since these are random encounters and defeating at least 1 shows off the content while showing proficiency
     description = "Defeat QueenVirgoΩ or JackCorvusΩ",
@@ -1790,6 +1857,7 @@ achievement(
 
 achievement(
     id = 611120,
+    badge = "697417",
     title = "Dawn of the Sun God",
     description = "Defeat Apollo Flame",
     points = 10,
@@ -1803,6 +1871,7 @@ achievement(
 
 achievement(
     id = 607128,
+    badge = "697418",
     title = "Event Horizon",
     description = "Defeat Sirius",
     points = 10,
@@ -1816,6 +1885,7 @@ achievement(
 
 achievement(
     id = 607129,
+    badge = "697420",
     title = "Catching ZZ's",
     description = "Defeat RogueZZ",
     points = 25,
@@ -1829,6 +1899,7 @@ achievement(
 
 achievement(
     id = 607130,
+    badge = "697421",
     title = "Sigma-Level Defusal",
     description = "Defeat MoonDestroyerΣ",
     points = 25,
@@ -1842,6 +1913,7 @@ achievement(
 
 achievement(
     id = 607131,
+    badge = "697422",
     title = "Twilight of the Sun God",
     description = "Defeat ApolloFlameΣ",
     points = 25,
@@ -1855,6 +1927,7 @@ achievement(
 
 achievement(
     id = 607132,
+    badge = "697423",
     title = "Supermassive Singularity",
     description = "Defeat SiriusΣ",
     points = 25,
@@ -1868,6 +1941,7 @@ achievement(
 
 achievement(
     id = 607133,
+    badge = "697424",
     title = "Crimson Legend",
     description = "Defeat CrimsonDragonΣ",
     points = 50,
@@ -2022,6 +2096,3 @@ rich_presence_conditional_display(
 )
 
 rich_presence_display("Playing poker with Dealer 🂡")
-
-
-
