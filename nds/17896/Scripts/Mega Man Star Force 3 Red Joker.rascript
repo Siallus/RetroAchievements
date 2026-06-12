@@ -215,9 +215,8 @@ fail_diamondice_challenge = never(
 
 complete_diamondice_challenge = trigger_when(
     current_map_id == 0x4b
-    && prev(diamondice_stage_end) == 0
     && diamondice_stage_end == 1
-)
+) && prev(diamondice_stage_end) == 0
 
 // Club Strong
 start_clubstrong_challenge = once(
@@ -235,9 +234,8 @@ fail_clubstrong_challenge = never(
 
 complete_clubstrong_challenge = trigger_when(
     current_map_id == 0x4e
-    && prev(clubstrong_stage_end) == 0
     && clubstrong_stage_end == 1
-)
+) && prev(clubstrong_stage_end) == 0
 
 // Jack Corvus Scripted Encounter
 start_jackcorvus_scripted_challenge = once(
@@ -272,9 +270,8 @@ fail_noise_cluster_challenge = never(
 
 complete_noise_cluster_challenge = trigger_when(
     current_map_id == 0x2b
-    && prev(noise_cluster_event_end) == 0
     && noise_cluster_event_end == 1
-)
+) && prev(noise_cluster_event_end) == 0
 
 // Acid Ace Scripted Encounter
 start_acidace_scripted_challenge = once(
@@ -290,8 +287,8 @@ fail_acidace_scripted_challenge = never(
 )
 
 complete_acidace_scripted_challenge = trigger_when(
-    prev(acidace_scripted_encounter_end == 0) && acidace_scripted_encounter_end == 1
-)
+     acidace_scripted_encounter_end == 1
+)&& prev(acidace_scripted_encounter_end == 0)
 
 
 // Lists
@@ -888,7 +885,7 @@ achievement(
         )
         && enemy1_variant == 0x01
         && arrive_at_orbital_base == 0x00
-        && prev(game_state == 0x6) && trigger_when(game_state == 0xa)
+        && prev(game_state == 0x6) && game_state == 0xa
         && cipher_code_protection()
         && real_brother_protection()
 )
