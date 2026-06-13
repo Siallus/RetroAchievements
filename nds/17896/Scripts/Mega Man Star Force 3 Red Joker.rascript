@@ -270,8 +270,9 @@ fail_noise_cluster_challenge = never(
 
 complete_noise_cluster_challenge = trigger_when(
     current_map_id == 0x2b
+    && prev(noise_cluster_event_end) == 0
     && noise_cluster_event_end == 1
-) && prev(noise_cluster_event_end) == 0
+) 
 
 // Acid Ace Scripted Encounter
 start_acidace_scripted_challenge = once(
@@ -287,8 +288,8 @@ fail_acidace_scripted_challenge = never(
 )
 
 complete_acidace_scripted_challenge = trigger_when(
-     acidace_scripted_encounter_end == 1
-)&& prev(acidace_scripted_encounter_end == 0)
+     prev(acidace_scripted_encounter_end == 0) && acidace_scripted_encounter_end == 1
+)
 
 
 // Lists
