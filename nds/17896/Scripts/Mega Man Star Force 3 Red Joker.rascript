@@ -1780,7 +1780,12 @@ achievement(
     title = "Lawless Loadout",
     description = "Obtain 30 unique illegal cards",
     points = 5,
-    trigger = prev(illegal_library_total_cards == 29) && measured(illegal_library_total_cards == 30)
+    trigger = (
+            prev(illegal_library_total_cards == 27) 
+            || prev(illegal_library_total_cards == 28)  
+            || prev(illegal_library_total_cards == 29)
+        )
+        && measured(illegal_library_total_cards == 30)
         && (game_state == 0x5 || game_state == 0xa)
         && cipher_code_protection()
         && real_brother_protection()
