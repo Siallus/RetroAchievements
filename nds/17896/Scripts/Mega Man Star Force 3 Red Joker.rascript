@@ -390,7 +390,7 @@ boss_list = [
     //{ "id": 134, "variant": 4, "name": "DreadJokerRR",  "leaderboard_id":  },
     { "id": 135, "variant": 0, "name": "CrimsonDragon",   "leaderboard_id": 160331 },
     // Phase 2 variant which goes unnamed
-    //{ "id": 135, "variant": 1, "name": "Crimson Dragon",  },"leaderboard_id": 160333 },
+    { "id": 135, "variant": 1, "name": "CrimsonDragonSpecial", "leaderboard_id": 160333 },
     { "id": 135, "variant": 2, "name": "CrimsonDragonSP", "leaderboard_id": 160332 },
     // Phase 2 variant which goes unnamed
     //{ "id": 135, "variant": 3, "name": "Crimson Dragon",  },"leaderboard_id": 160333 },
@@ -1963,6 +1963,18 @@ for boss in boss_list {
     start_condition = finished_battle() 
         && enemy1_id == boss["id"] 
         && enemy1_variant == boss["variant"]
+    
+    // Check against boss hp for encounters without a results screen
+    // CrimsonDragonV1, CrimsonDragonPhase2, CrimsonDragonSP, AcidAceV1, and SiriusV1
+    if ((boss["id"] == 0x87 && boss["variant"] == 0x0)
+        || (boss["id"] == 0x87 && boss["variant"] == 0x1)
+        || (boss["id"] == 0x87 && boss["variant"] == 0x2)
+        || (boss["id"] == 0x8a && boss["variant"] == 0x0)
+        || (boss["id"] == 0x90 && boss["variant"] == 0x0)) {
+        start_condition = enemy1_just_deleted() 
+           && enemy1_id == boss["id"] 
+           && enemy1_variant == boss["variant"]
+    }
     
     // Skip JackCorvus scripted encounter
     if (boss["id"] == 0x85 && boss["variant"] == 0x0) {
