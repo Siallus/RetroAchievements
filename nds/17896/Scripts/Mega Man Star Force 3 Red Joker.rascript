@@ -247,7 +247,7 @@ start_jackcorvus_scripted_challenge = once(
 )
 
 fail_jackcorvus_scripted_challenge = never(
-    current_battle_hp < max_battle_hp
+    prev(current_battle_hp) > current_battle_hp
 )
 
 complete_jackcorvus_scripted_challenge = prev(enemy1_health > 1050) 
@@ -284,7 +284,7 @@ start_acidace_scripted_challenge = once(
 )
 
 fail_acidace_scripted_challenge = never(
-    current_battle_hp < max_battle_hp
+    prev(current_battle_hp) > current_battle_hp
 )
 
 complete_acidace_scripted_challenge = trigger_when(
@@ -1026,8 +1026,8 @@ achievement(
     trigger = enemy1_id == 0x8c
         && current_map_id == 0x19
         && queenvirgo_scenario_end == 0
-        && trigger_when(s_ranked_battle())
-        && prev(byte(0xea8b4)) == 6 && trigger_when(byte(0xea8b4) == 10)
+        && s_ranked_battle()
+        && trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1071,8 +1071,8 @@ achievement(
     trigger = enemy1_id == 0x8d
         && current_map_id == 0x0b
         && jackcorvus_scenario_end == 0
-        && trigger_when(s_ranked_battle())
-        && prev(byte(0xea8b4)) == 6 && trigger_when(byte(0xea8b4) == 10)
+        && s_ranked_battle()
+        && trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1087,8 +1087,8 @@ achievement(
     trigger = enemy1_id == 0x8e
         && current_map_id == 0xaa
         && campaign_end == 0
-        && trigger_when(s_ranked_battle())
-        && prev(byte(0xea8b4)) == 6 && trigger_when(byte(0xea8b4) == 10)
+        && s_ranked_battle()
+        && trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
 )
