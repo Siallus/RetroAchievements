@@ -237,23 +237,6 @@ complete_clubstrong_challenge = trigger_when(
     && clubstrong_stage_end == 1
 ) && prev(clubstrong_stage_end) == 0
 
-// Jack Corvus Scripted Encounter
-start_jackcorvus_scripted_challenge = once(
-    enemy1_id == 0x85 
-    && enemy1_variant == 0x0
-    && current_map_id == 0x15
-    && jackcorvus_scripted_encounter_end == 0
-    && prev(game_state == 8 || game_state == 9) && game_state == 6
-)
-
-fail_jackcorvus_scripted_challenge = never(
-    prev(current_battle_hp) > current_battle_hp
-)
-
-complete_jackcorvus_scripted_challenge = prev(enemy1_health > 1050) 
-    && trigger_when(enemy1_health <= 1050)
-
-
 // Noise Cluster
 start_noise_cluster_challenge = once(
     noise_cluster_event_start == 1
@@ -273,23 +256,6 @@ complete_noise_cluster_challenge = trigger_when(
     && prev(noise_cluster_event_end) == 0
     && noise_cluster_event_end == 1
 ) 
-
-// Acid Ace Scripted Encounter
-start_acidace_scripted_challenge = once(
-    enemy1_id == 0x8a 
-    && enemy1_variant == 0x1
-    && current_map_id == 0x12
-    && acidace_scripted_encounter_end == 0
-    && prev(game_state == 8 || game_state == 9) && game_state == 6
-)
-
-fail_acidace_scripted_challenge = never(
-    prev(current_battle_hp) > current_battle_hp
-)
-
-complete_acidace_scripted_challenge = trigger_when(
-     prev(acidace_scripted_encounter_end == 0) && acidace_scripted_encounter_end == 1
-)
 
 
 // Lists
@@ -699,7 +665,7 @@ function at_results_screen() => byte(0xea8b4) == 10
 function in_battle() => game_state == 6
 function in_battle_or_results_screen() => game_state == 6 || game_state == 10
 function at_title_screen() => game_state == 0 || game_state == 2 || game_state == 3 || game_state == 4
-function game_over() => in_battle_or_results_screen() && game_over_state == 1
+function game_over() => game_state == 0xc && game_over_state == 1
 function in_overworld() => game_state == 5
 function save_corrupted() => game_state == 1
 function in_battle_vs_viruses() => in_battle_or_results_screen() && enemy1_id < 30
@@ -1009,9 +975,17 @@ achievement(
     title = "Playing with Fire",
     description = "Survive your first encounter with Jack Corvus without taking damage",
     points = 5,
-    trigger = start_jackcorvus_scripted_challenge
-        && fail_jackcorvus_scripted_challenge
-        && complete_jackcorvus_scripted_challenge
+    trigger = enemy1_id == 0x85 
+        && enemy1_variant == 0x0
+        && current_map_id == 0x15
+        && jackcorvus_scripted_encounter_end == 0
+        && game_state == 6
+        && prev(enemy1_health > 1050) 
+        && trigger_when(enemy1_health <= 1050)
+        && disable_when (
+            prev(current_battle_hp) > current_battle_hp,
+            until = in_overworld()
+        )
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1054,9 +1028,18 @@ achievement(
     title = "Flawless Evaluation",
     description = "Survive your encounter with Acid Ace without taking damage",
     points = 5,
-    trigger = start_acidace_scripted_challenge
-        && fail_acidace_scripted_challenge
-        && complete_acidace_scripted_challenge
+    trigger = enemy1_id == 0x8a 
+        && enemy1_variant == 0x1
+        && current_map_id == 0x12
+        && acidace_scripted_encounter_end == 0
+        && game_state == 6
+        && prev(acidace_scripted_encounter_end == 0) 
+        && trigger_when(acidace_scripted_encounter_end == 1)
+        && disable_when(
+            prev(current_battle_hp) > current_battle_hp,
+            until = in_overworld()
+        )
+
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1088,7 +1071,7 @@ achievement(
         && current_map_id == 0xaa
         && campaign_end == 0
         && s_ranked_battle()
-        && trigger_when(finished_battle())
+&& trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
 )
@@ -1781,11 +1764,10 @@ achievement(
     description = "Obtain 30 unique illegal cards",
     points = 5,
     trigger = (
-            prev(illegal_library_total_cards == 27) 
-            || prev(illegal_library_total_cards == 28)  
-            || prev(illegal_library_total_cards == 29)
+            prev(illegal_library_total_cards >= 27) 
+            && prev(illegal_library_total_cards <= 29) 
         )
-        && measured(illegal_library_total_cards == 30)
+        && measured(illegal_library_total_cards >= 30)
         && (game_state == 0x5 || game_state == 0xa)
         && cipher_code_protection()
         && real_brother_protection()
@@ -1960,22 +1942,11 @@ achievement(
 // Leaderboards
 // Boss records
 for boss in boss_list {
-    start_condition = finished_battle() 
-        && enemy1_id == boss["id"] 
+    start_condition = enemy1_id == boss["id"] 
         && enemy1_variant == boss["variant"]
-    
-    // Check against boss hp for encounters without a results screen
-    // CrimsonDragonV1, CrimsonDragonPhase2, CrimsonDragonSP, AcidAceV1, and SiriusV1
-    if ((boss["id"] == 0x87 && boss["variant"] == 0x0)
-        || (boss["id"] == 0x87 && boss["variant"] == 0x1)
-        || (boss["id"] == 0x87 && boss["variant"] == 0x2)
-        || (boss["id"] == 0x8a && boss["variant"] == 0x0)
-        || (boss["id"] == 0x90 && boss["variant"] == 0x0)) {
-        start_condition = enemy1_just_deleted() 
-           && enemy1_id == boss["id"] 
-           && enemy1_variant == boss["variant"]
-    }
-    
+        && prev(game_state == 8 || game_state == 9)
+        && game_state == 6
+        
     // Skip JackCorvus scripted encounter
     if (boss["id"] == 0x85 && boss["variant"] == 0x0) {
         start_condition = start_condition && current_map_id != 0x15
@@ -1985,13 +1956,26 @@ for boss in boss_list {
         start_condition = start_condition && current_map_id != 0x12
     }
 
+    submit_condition = finished_battle() 
+    
+    // Check against boss hp for encounters without a results screen
+    // CrimsonDragonV1, CrimsonDragonPhase2, CrimsonDragonSP, AcidAceV1, and SiriusV1
+    if ((boss["id"] == 0x87 && boss["variant"] == 0x0)
+            || (boss["id"] == 0x87 && boss["variant"] == 0x1)
+            || (boss["id"] == 0x87 && boss["variant"] == 0x2)
+            || (boss["id"] == 0x8a && boss["variant"] == 0x0)
+            || (boss["id"] == 0x90 && boss["variant"] == 0x0)) {
+        submit_condition = enemy1_just_deleted() 
+    }
+    
+
     leaderboard(
         id = boss["leaderboard_id"],
         title = format("{0} Speed Deletion", boss["name"]),
         description = format("Defeat {0} as fast as possible", boss["name"]),
         start = start_condition,
-        cancel = always_false(),
-        submit = always_true(),
+        cancel = game_over() || in_overworld(),
+        submit = submit_condition,
         value = dword(0x18f040) * 2,
         format = "frames",
         lower_is_better = true
