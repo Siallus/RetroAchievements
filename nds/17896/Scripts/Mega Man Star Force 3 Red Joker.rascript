@@ -1000,7 +1000,7 @@ achievement(
     trigger = enemy1_id == 0x8c
         && current_map_id == 0x19
         && queenvirgo_scenario_end == 0
-        && s_ranked_battle()
+        && trigger_when(s_ranked_battle())
         && trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
@@ -1053,7 +1053,7 @@ achievement(
     trigger = enemy1_id == 0x8d
         && current_map_id == 0x0b
         && jackcorvus_scenario_end == 0
-        && s_ranked_battle()
+        && trigger_when(s_ranked_battle())
         && trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
@@ -1069,8 +1069,8 @@ achievement(
     trigger = enemy1_id == 0x8e
         && current_map_id == 0xaa
         && campaign_end == 0
-        && s_ranked_battle()
-&& trigger_when(finished_battle())
+        && trigger_when(s_ranked_battle())
+        && trigger_when(finished_battle())
         && cipher_code_protection()
         && real_brother_protection()
 )
