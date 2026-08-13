@@ -323,11 +323,11 @@ virus_list = [
 ]
 
 boss_list = [
-    { "id": 129, "variant": 0, "name": "SpadeMagnus",     "leaderboard_id": 160302 },
-    { "id": 129, "variant": 1, "name": "SpadeMagnusV2",   "leaderboard_id": 160303 },
-    { "id": 129, "variant": 2, "name": "SpadeMagnusV3",   "leaderboard_id": 160304 },
-    { "id": 129, "variant": 3, "name": "SpadeMagnusR",    "leaderboard_id": 160305 },
-    { "id": 129, "variant": 4, "name": "SpadeMagnusΩ",    "leaderboard_id": 160306 },
+    { "id": 129, "variant": 0, "name": "SpadeMagnes",     "leaderboard_id": 160302 },
+    { "id": 129, "variant": 1, "name": "SpadeMagnesV2",   "leaderboard_id": 160303 },
+    { "id": 129, "variant": 2, "name": "SpadeMagnesV3",   "leaderboard_id": 160304 },
+    { "id": 129, "variant": 3, "name": "SpadeMagnesR",    "leaderboard_id": 160305 },
+    { "id": 129, "variant": 4, "name": "SpadeMagnesΩ",    "leaderboard_id": 160306 },
     { "id": 130, "variant": 0, "name": "DiamondIce",      "leaderboard_id": 160307 },
     { "id": 130, "variant": 1, "name": "DiamondIceV2",    "leaderboard_id": 160308 },
     { "id": 130, "variant": 2, "name": "DiamondIceV3",    "leaderboard_id": 160309 },
@@ -822,7 +822,7 @@ achievement(
     badge = "716860",
     type = "progression",
     title = "Houston, We Have a Solution",
-    description = "Defeat Spade Magnus and clear the way for a successful launch",
+    description = "Defeat Spade Magnes and clear the way for a successful launch",
     points = 3,
     trigger = prev(spademagnus_scenario_end) == 0
         && spademagnus_scenario_end == 1
@@ -1122,7 +1122,7 @@ achievement(
     id = 607094,
     badge = "716913",
     title = "Opposites Detract",
-    description = "Defeat SpadeMagnusR with an S rank during a rematch",
+    description = "Defeat SpadeMagnesR with an S rank during a rematch",
     points = 10,
     trigger = s_ranked_battle()
         && enemy1_id == 0x81
