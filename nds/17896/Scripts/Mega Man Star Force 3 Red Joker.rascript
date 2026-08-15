@@ -1681,7 +1681,7 @@ achievement(
 
 achievement(
     id = 607119,
-    badge = "716889",
+    badge = "716890",
     title = "Production Assistant",
     description = "Complete every help request in WBG Studios",
     points = 10,
@@ -1694,7 +1694,7 @@ achievement(
 
 achievement(
     id = 607120,
-    badge = "716890",
+    badge = "716889",
     title = "WAZA Employee of the Month",
     description = "Complete every help request in WAZA HQ",
     points = 10,
