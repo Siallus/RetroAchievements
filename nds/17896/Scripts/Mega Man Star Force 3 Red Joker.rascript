@@ -1031,7 +1031,7 @@ achievement(
     trigger = enemy1_id == 0x8a 
         && enemy1_variant == 0x1
         && current_map_id == 0x12
-        && game_state == 5
+        && trigger_when(game_state == 5)
         && prev(acidace_scripted_encounter_end == 0) 
         && trigger_when(acidace_scripted_encounter_end == 1)
         && disable_when(
@@ -1352,11 +1352,11 @@ achievement(
     id = 606435,
     badge = "716899",
     title = "Air Superiority",
-    description = "Defeat a virus while standing on a broken tile or hole tile while in Cygnus Noise",
+    description = "Defeat a virus while standing on a hole tile or missing tile while in Cygnus Noise",
     points = 5,
     trigger =
         in_battle()
-        && current_noise_form == 2
+        && current_noise_form == 6
         && any_enemy_just_deleted()
         // Tiles 5, 10, and 15 are always left, middle, and right respectively
         // We check what tile Mega is on and both possible states
