@@ -139,7 +139,7 @@ illegal_library_total_cards = sum_of(range(0xfcbb6,0xfcbcc), addr => bitcount(ad
         + bit1(0xfcbcd) + bit2(0xfcbcd) + bit3(0xfcbcd) + bit4(0xfcbcd) + bit5(0xfcbcd)
 
 // Mystery Wave Logic
-alohaha_mystery_waves = bit4(0xfcafb) + bit5(0xfcafb) + bit6(0xfcafb) + bit7(0xfcafb) // bit3(0xfcafb) this seems bugged, not actually collectable
+alohaha_mystery_waves = bit4(0xfcafb) + bit5(0xfcafb) + bit6(0xfcafb) + bit7(0xfcafb) + bit3(0xfcafb)
         + bit0(0xfcafc) + bit1(0xfcafc) + bit2(0xfcafc) + bit3(0xfcafc) + bit4(0xfcafc) + bit5(0xfcafc)
         + bit2(0xfcb07) + bit3(0xfcb07) + bit4(0xfcb07) + bit4(0xfcb09) + bit5(0xfcb09)+ bit7(0xfcb0c)
         + bit0(0xfcb0d) + bit1(0xfcb0d) + bit4(0xfcb14)
@@ -1506,7 +1506,7 @@ achievement(
     // Structuring it like this creates a SubSource mem chain which shows the correct measured display for the player
     trigger = prev(echoridge_mystery_waves) == 1
         && measured(10 - echoridge_mystery_waves == 10)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1520,7 +1520,7 @@ achievement(
     points = 5,
     trigger = prev(echoridgeelem_mystery_waves) == 1
         && measured(18 - echoridgeelem_mystery_waves == 18)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1534,7 +1534,7 @@ achievement(
     points = 5,
     trigger = prev(spicamall_mystery_waves) == 1
         && measured(22 - spicamall_mystery_waves == 22)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1548,7 +1548,7 @@ achievement(
     points = 5,
     trigger = prev(wbgstudios_mystery_waves) == 1 
         && measured(26 - wbgstudios_mystery_waves == 26)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1561,8 +1561,8 @@ achievement(
     description = "Collect every blue and purple Mystery Wave in Alohaha",
     points = 5,
     trigger = prev(alohaha_mystery_waves) == 1
-        && measured(20 - alohaha_mystery_waves == 20)
-        && on_wave_road_or_cc()
+        && measured(21 - alohaha_mystery_waves == 21)
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1576,7 +1576,7 @@ achievement(
     points = 5,
     trigger = prev(wazahq_mystery_waves) == 1
         && measured(21 - wazahq_mystery_waves == 21)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1590,7 +1590,7 @@ achievement(
     points = 5,
     trigger = prev(orbitalbase_mystery_waves) == 1
         && measured(6 - orbitalbase_mystery_waves == 6)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1604,7 +1604,7 @@ achievement(
     points = 5,
     trigger = prev(astrowave_mystery_waves) == 1
         && measured(5 - astrowave_mystery_waves == 5)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1618,7 +1618,7 @@ achievement(
     points = 5,
     trigger = prev(secretshelter_mystery_waves) == 1
         && measured(16 - secretshelter_mystery_waves == 16)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
@@ -1632,7 +1632,7 @@ achievement(
     points = 5,
     trigger = prev(noisewave_mystery_waves) == 1
         && measured(39 - noisewave_mystery_waves == 39)
-        && on_wave_road_or_cc()
+        //&& on_wave_road_or_cc()
         && in_overworld()
         && cipher_code_protection()
         && real_brother_protection()
