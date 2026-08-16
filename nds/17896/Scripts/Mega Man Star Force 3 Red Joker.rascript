@@ -709,7 +709,7 @@ function tile15_is_hole() => tile15_hole_state == 1
 function megaman_on_left_tile() => megaman_field_position == 0
 function megaman_on_middle_tile() => megaman_field_position == 1
 function megaman_on_right_tile() => megaman_field_position == 2
-function s_ranked_battle() => battle_rank == 0x11
+function s_ranked_battle() => battle_rank == 0x11 || battle_rank == 0x41
 function cipher_code_protection() => card_cipher_code_amount_activated == 0
 function first_card_minigame_incomplete() => card_first_minigame_state == 1
 function card_cc1_incomplete() => card_minigame_cc1_card_state == 1
@@ -1857,7 +1857,7 @@ achievement(
 
 achievement(
     id = 611120,
-    badge = "716925",
+    badge = "718081",
     title = "Dawn of the Sun God",
     description = "Defeat Apollo Flame",
     points = 10,
@@ -1871,7 +1871,7 @@ achievement(
 
 achievement(
     id = 607128,
-    badge = "716926",
+    badge = "718082",
     title = "Event Horizon",
     description = "Defeat Sirius",
     points = 10,
@@ -1885,7 +1885,7 @@ achievement(
 
 achievement(
     id = 607129,
-    badge = "716928",
+    badge = "718083",
     title = "Catching ZZ's",
     description = "Defeat RogueZZ",
     points = 25,
